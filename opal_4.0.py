@@ -2455,10 +2455,6 @@ async def slash_set_embed_emojis(
 ) -> None:
     if not await require_manage_guild_interaction(interaction):
         return
-    role_error = validate_staff_role(역할)
-    if role_error:
-        await interaction.response.send_message(embed=make_embed("설정 실패", role_error, RED), ephemeral=True)
-        return
 
     config = load_config(interaction.guild.id)
     emojis = config.setdefault("embed_emojis", DEFAULT_EMBED_EMOJIS.copy())
