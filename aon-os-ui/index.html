@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#f5f5f7" />
+  <title>AON OS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="device" aria-label="AON OS UI">
+    <div class="status-bar" id="statusBar">
+      <span id="time">9:41</span>
+      <div class="status-icons"><span>⌁</span><span>⌁</span><span id="battery">▰</span></div>
+    </div>
+    <section id="lockScreen" class="screen lock-screen">
+      <div class="lock-content">
+        <div class="lock-date" id="lockDate">일요일, 9월 6일</div>
+        <div class="lock-time" id="lockTime">9:41</div>
+        <div class="lock-widget glass"><div class="weather-icon">☀</div><div><b>맑음</b><small>서울 · 24°</small></div></div>
+      </div>
+      <div class="lock-notice glass">알림이 없습니다</div>
+      <div class="lock-actions"><button data-action="camera">◉</button><button data-action="unlock">⌄</button><button data-action="flash">◌</button></div>
+      <div class="home-indicator"></div>
+    </section>
+    <section id="homeScreen" class="screen home-screen hidden">
+      <div class="wallpaper-overlay"></div>
+      <div class="home-top glass-thin"><span id="homeDate">9월 6일</span><span id="batteryLabel">100%</span></div>
+      <div class="widget-grid">
+        <div class="widget large glass"><div class="widget-label">오늘</div><div class="widget-title">좋은 오후예요.</div><div class="widget-sub">새로운 소식을 한눈에 확인하세요.</div></div>
+        <div class="widget glass"><div class="widget-label">날씨</div><div class="temperature">24°</div><div class="widget-sub">맑음</div></div>
+        <div class="widget glass"><div class="widget-label">일정</div><div class="widget-title">할 일 없음</div><div class="widget-sub">오늘은 여유롭게</div></div>
+      </div>
+      <div class="apps" id="apps">
+        <button class="app" data-app="messages"><span class="app-icon msg">✉</span><span>메시지</span></button>
+        <button class="app" data-app="photos"><span class="app-icon photo">◉</span><span>사진</span></button>
+        <button class="app" data-app="weather"><span class="app-icon weather">☀</span><span>날씨</span></button>
+        <button class="app" data-app="settings"><span class="app-icon settings">⚙</span><span>설정</span></button>
+        <button class="app" data-app="notes"><span class="app-icon notes">▤</span><span>노트</span></button>
+        <button class="app" data-app="music"><span class="app-icon music">♫</span><span>음악</span></button>
+        <button class="app" data-app="files"><span class="app-icon files">▱</span><span>파일</span></button>
+        <button class="app" data-app="browser"><span class="app-icon browser">◎</span><span>브라우저</span></button>
+      </div>
+      <div class="dock glass"><button class="dock-app" data-app="phone">☎</button><button class="dock-app" data-app="messages">✉</button><button class="dock-app" data-app="browser">◎</button><button class="dock-app" id="allApps">•••</button></div>
+      <div class="home-indicator"></div>
+    </section>
+    <section id="appScreen" class="screen app-screen hidden">
+      <header class="app-header glass"><button id="backButton">‹</button><h2 id="appTitle">앱</h2><button id="appMenu">•••</button></header>
+      <div id="appBody"></div><div class="home-indicator"></div>
+    </section>
+    <section id="controlCenter" class="overlay hidden">
+      <div class="control-sheet glass-heavy"><div class="grabber"></div><div class="control-head"><div><b>일요일</b><span id="ccTime">9:41</span></div><button id="closeCC">×</button></div>
+        <div class="quick-grid"><button class="toggle active" data-toggle="air">✈<small>비행기 모드</small></button><button class="toggle active" data-toggle="wifi">⌁<small>Wi-Fi</small></button><button class="toggle" data-toggle="bt">ᛒ<small>Bluetooth</small></button><button class="toggle" data-toggle="dark">☾<small>다크 모드</small></button></div>
+        <div class="slider"><span>☀</span><input type="range" min="10" max="100" value="80" /></div><div class="slider"><span>🔊</span><input type="range" min="0" max="100" value="65" /></div>
+        <div class="media glass"><div><small>재생 중</small><b>아직 음악이 재생되지 않았습니다</b></div><button>▶</button></div>
+      </div>
+    </section>
+    <section id="notificationCenter" class="overlay hidden"><div class="notification-sheet glass-heavy"><div class="grabber"></div><div class="control-head"><div><b>알림</b><span>새로운 소식</span></div><button id="closeNC">×</button></div><div class="notification empty"><div class="empty-icon">✓</div><b>새 알림이 없습니다</b><span>모든 알림을 확인했습니다.</span></div><div class="notification glass"><b>AON OS</b><span>시스템 UI가 준비되었습니다.</span><small>지금</small></div></div></section>
+    <div class="toast hidden" id="toast"></div>
+  </main>
+  <script src="app.js"></script>
+</body>
+</html>
